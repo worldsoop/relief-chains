@@ -1,2 +1,2 @@
-# supply-chains
-Challenging environments for supply chain logistics
+# relief-chains
+Challenging environments for disaster relief chain logistics
