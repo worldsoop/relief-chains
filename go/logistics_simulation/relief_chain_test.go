@@ -1,4 +1,4 @@
-package parasite_simulation
+package logistics_simulation
 
 import (
 	"testing"
@@ -6,14 +6,14 @@ import (
 	"github.com/umbralcalc/stochadex/pkg/simulator"
 )
 
-func TestParasiteSimulation(t *testing.T) {
+func TestReliefChain(t *testing.T) {
 	t.Run(
-		"test that the parasite simulation runs",
+		"test that the relief chain logistics simulation runs",
 		func(t *testing.T) {
-			settings := simulator.NewLoadSettingsConfigFromYaml("parasite_spread_config.yaml")
+			settings := simulator.NewLoadSettingsConfigFromYaml("relief_chain_config.yaml")
 			iterations := make([]simulator.Iteration, 0)
 			for partitionIndex := range settings.StateWidths {
-				iteration := &ParasiteSpreadIteration{}
+				iteration := &ReliefChainIteration{}
 				iteration.Configure(partitionIndex, settings)
 				iterations = append(iterations, iteration)
 			}

@@ -13,7 +13,7 @@ import (
 	"github.com/umbralcalc/stochadex/pkg/interactions"
 	"github.com/umbralcalc/stochadex/pkg/simulator"
 
-	"github.com/worldsoop/paraspace/go/parasite_simulation"
+	"github.com/worldsoop/relief-chains/go/logistics_simulation"
 )
 
 var upgrader = websocket.Upgrader{
@@ -63,8 +63,8 @@ func LoadStepperOrRunner(
 }
 
 func main() {
-	settings := simulator.NewLoadSettingsConfigFromYaml("./parasite_simulation/parasite_spread_config.yaml")
-	iterations := []simulator.Iteration{&parasite_simulation.ParasiteSpreadIteration{}}
+	settings := simulator.NewLoadSettingsConfigFromYaml("./logistics_simulation/relief_chain_config.yaml")
+	iterations := []simulator.Iteration{&logistics_simulation.ReliefChainIteration{}}
 	for partitionIndex := range settings.StateWidths {
 		iterations[partitionIndex].Configure(partitionIndex, settings)
 	}
